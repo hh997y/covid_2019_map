@@ -12,8 +12,6 @@ content = resp.content.decode("unicode_escape")
 # 将网页内容改为 json 格式
 con_json = json.loads(content)
 
-# print(con_json["data"]["worldlist"])
-
 china_data = con_json["data"]["list"]
 china_list = []
 for i in range(len(china_data)):
@@ -68,16 +66,6 @@ if f == 0:
     print('all in')
 #####
 
-# # pandas
-# print(china_data.columns.values)  # 打印columns值
-# print(china_data.index.values)  # 打印index值
-# for i in range(len(china_data)):
-#     if china_data.loc[i,'province']=="四川":
-#         sc = china_data.loc[[i]]
-#         # print(sc["city"],sc["total"])
-# print(china_data.loc[[0]])  # loc打印某一行的值，某一列直接china_data[]
-
-
 
 from pyecharts.charts import * #导入所有图表
 from pyecharts import options as opts
@@ -123,5 +111,5 @@ area_map.set_series_opts(label_opts=opts.LabelOpts(formatter="{b}: {c}"))  # a:�
 page = Page()
 page.add(world_map)
 page.add(area_map)
-path=u'C:\\Users\\38969\\Desktop\\2019_nCoV 可视化.html'
+path=  # 输出路径
 page.render(path)
